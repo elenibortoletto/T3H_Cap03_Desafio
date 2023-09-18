@@ -1,0 +1,22 @@
+﻿@model T3H_Cap03_Desafio.Models.Pedidos
+@{
+    ViewBag.Title = "SelecionarPedidoTipado";
+}
+
+<h2>Selecionar Pedido para Listar</h2>
+
+<br />
+<br />
+@using (Html.BeginForm())
+{
+
+    <br />
+    @Html.LabelFor(P => P.PedidoID)
+    <br />
+    @Html.TextBoxFor(P => P.PedidoID)
+  
+
+
+    <input type="submit" value="Enviar" />
+
+}

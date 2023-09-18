@@ -44,7 +44,9 @@ namespace T3H_Cap03_Desafio.Controllers
                 throw;
             }          
         }
-   
+
+
+       
 
         [HttpGet]
         public ActionResult ListarPedidoTipado()
@@ -66,6 +68,35 @@ namespace T3H_Cap03_Desafio.Controllers
         
          
            
+        }
+
+        [HttpGet]  // default não precisa colocar
+        public ActionResult SelecionarPedidoTipado()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult SelecionarPedidoTipado(Pedidos pedidos)
+        {
+            string arquivo = $"C:\\pedido{pedidos.PedidoID}.txt";
+            try
+            {
+                StreamReader sr = new StreamReader(arquivo);
+                string retorno = sr.ReadToEnd();
+                sr.Close();
+                ViewBag.Message = retorno;
+                return View("MostraPedido");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+
         }
 
     }
