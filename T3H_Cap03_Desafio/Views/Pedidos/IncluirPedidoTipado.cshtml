@@ -1,0 +1,37 @@
+﻿@model T3H_Cap03_Desafio.Models.Pedidos
+@{
+    ViewBag.Title = "IncluirPedidoTipado";
+}
+
+<h2>Incluir Pedido</h2>
+
+<br />
+<br />
+@using (Html.BeginForm())
+{
+
+    <br />
+    @Html.LabelFor(P => P.PedidoID)
+    <br />
+    @Html.TextBoxFor(P => P.PedidoID)
+    <br />
+    @Html.ValidationMessageFor(P => P.PedidoID)
+    <br />
+    @Html.LabelFor(P => P.Produto)
+    <br />
+    @Html.TextBoxFor(P => P.Produto)
+    <br />
+    @Html.ValidationMessageFor(P => P.Produto)
+    <br />
+    @Html.LabelFor(P => P.Quantidade)
+    <br />
+    @Html.TextBoxFor(P => P.Quantidade)
+    <br />
+    @Html.ValidationMessageFor(P => P.Quantidade)
+    <br />
+
+
+
+    <input type="submit" value="Enviar" />
+
+}
